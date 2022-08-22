@@ -55,6 +55,20 @@ $(document).ready(() => {
   });
 
   /**
+   * Add To Cart Modal : Add Watermark
+   */
+  $("button.mobytic_add_to_cart_productlist").click(function () {
+    
+    setTimeout(() => {
+      mobytic_add_watermark(watermark_text, '#blockcart-modal img.product-image', watermark_position, watermark_color, watermark_opacity, 200, 14);
+    }, 1000);
+    setTimeout(() => {
+      mobytic_add_watermark(watermark_text, '#blockcart-modal img.product-image', watermark_position, watermark_color, watermark_opacity, 200, 14);
+    }, 1500);
+
+  });
+
+  /**
    * Product Page
    * _________________________________________
    * 
@@ -77,6 +91,9 @@ $(document).ready(() => {
     update_url_with_watermark(watermark_text, watermark_position, watermark_color, watermark_opacity, 'img.js-modal-thumb');
   });
 
+  /**
+   * Add To Cart Modal : Add Watermark
+   */
   $(document).ajaxSuccess(function() {
     update_url_with_watermark(watermark_text, watermark_position, watermark_color, watermark_opacity, '#product .product-cover > img', 800, 50);
 
@@ -90,6 +107,17 @@ $(document).ready(() => {
     $("#product .product-cover > div.layer").click(function () {
       document.querySelector('#product .modal-body > figure > img').src =  document.querySelector('#product .product-cover > img').src;
       update_url_with_watermark(watermark_text, watermark_position, watermark_color, watermark_opacity, 'img.js-modal-thumb');
+    });
+
+    $("button.add-to-cart").click(function () {
+    
+      setTimeout(() => {
+        mobytic_add_watermark(watermark_text, '#blockcart-modal img.product-image', watermark_position, watermark_color, watermark_opacity, 200, 14);
+      }, 1000);
+      setTimeout(() => {
+        mobytic_add_watermark(watermark_text, '#blockcart-modal img.product-image', watermark_position, watermark_color, watermark_opacity, 200, 14);
+      }, 1500);
+  
     });
 
   });
